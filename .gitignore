@@ -1,0 +1,17 @@
+*.pth
+*.pk
+*.model
+*.zip
+*.tar
+*.pyc
+*.log
+*.o
+*.so
+*.a
+*.exe
+*.out
+.idea
+**.DS_Store**
+**/__pycache__/**
+
+
