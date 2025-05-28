@@ -2,14 +2,15 @@ from PIL import Image
 from torchvision import transforms
 from tqdm import tqdm
 from typing import List, Tuple
+import os
+import random
+import shutil
 
 from metrics.f1_metric import F1Metric
 from metrics.top_k_accuracy import TopKAccuracyMetric
 from evaluation.evaluator import ModelEvaluator
 from models.base_model import BaseModel
 from datasets.base_dataset import BaseDataset
-import os
-                                                                                                    
 
 class CUBDataset(BaseDataset):
     def __init__(self, root="CUB_200_2011/CUB_200_2011"):
