@@ -1,19 +1,12 @@
-from datasets.cub_dataset import CUBDataset
-from datasets.dtd_dataset import DTDDataset
-from datasets.fungi_clef_2022_dataset import FungiCLEF2022Dataset
 from metrics.f1_metric import F1Metric
 from metrics.top_k_accuracy import TopKAccuracyMetric
 from terminaltables import AsciiTable
-from models.base_model import BaseModel
 import torch
 
 from models.declip_model import DeCLIPModel
 from models.coca_model import CoCaModel
-##from models.lit_model import LiTModel
 from models.flava_model import FlavaZSModel
-from models.nano_vlm_model import NanoVLMModel
 from models.open_clip_model import OpenCLIP
-from models.blip2_model import BLIP2Model
 
 
 debug = False
@@ -76,15 +69,12 @@ def run_benchmark(model_class, dataset, ds_name, n_samples=None, batch_size=1):
 
 def main():
     csv_path = 'merged_dataset.csv'
-    domains = ['CUB_200_2011_split', 'dtd_split', 'fungi_clef_2022_split']  # укажите актуальные значения domain из CSV
+    domains = ['CUB_200_2011_split', 'dtd_split', 'fungi_clef_2022_split']
     model_classes = [
         OpenCLIP,
         DeCLIPModel,
         CoCaModel,
-        # LiTModel,
         FlavaZSModel,
-        #BLIP2Model,
-        # NanoVLMModel
     ]
 
     for domain in domains:
